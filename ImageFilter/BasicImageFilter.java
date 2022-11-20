@@ -1,3 +1,5 @@
+
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +10,7 @@ class BasicImageFilter {
         BufferedImage image = null;
 
         try {
-            var inputFile = new File("testImage.jpg");
+            var inputFile = new File("ImageFilter\\testImage.jpg");
             image = ImageIO.read(inputFile);
         }
         catch (IOException ex) {
@@ -18,7 +20,7 @@ class BasicImageFilter {
         var processedImage = ProcessImage(image);
 
         try {
-            var outputFile = new File("resultImage.jpg");
+            var outputFile = new File("ImageFilter\\resultImage.jpg");
             ImageIO.write(processedImage, "jpg", outputFile);
         }
         catch (IOException ex) {
@@ -46,7 +48,9 @@ class BasicImageFilter {
     }
 
     private static Pixel FilterPixel(Pixel input) {
-        //do something interesting here.
+        /*You can do anything you want here to change the image.
+         *For example, you could remove all of the green from the image
+         *You could make the image greyscale, or black and white*/
         return input;
     }
 }
